@@ -5,8 +5,6 @@ FROM pypi/flake8
 MAINTAINER cadams@loc.gov
 
 RUN pip install --upgrade pip
-# Until this is on PyPI we'll install from the GitHub repo instead:
-# RUN pip install flake8-codeclimate
-RUN pip install -e git+git://github.com/bennylope/flake8-codeclimate.git#egg=flake8_codeclimate
+RUN pip install flake8-codeclimate
 
 ENTRYPOINT flake8 --format=codeclimate /code
