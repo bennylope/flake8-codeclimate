@@ -5,11 +5,14 @@ requires = [
     "flake8 > 3.0.0",
 ]
 
+readme = open('README.rst').read()
+
 setuptools.setup(
     name="flake8_codeclimate",
     license="MIT",
-    version="0.1.0",
+    version="0.1.1",
     description="Code Climate reporting formatter plugin for Flake8",
+    long_description=readme,
     author="Ben Lopatin",
     author_email="ben@benlopatin.com",
     url="https://github.com/bennylope/flake8-codeclimate",
