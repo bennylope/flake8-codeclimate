@@ -16,7 +16,7 @@ setuptools.setup(
     author="Ben Lopatin",
     author_email="ben@benlopatin.com",
     url="https://github.com/bennylope/flake8-codeclimate",
-    py_modules=['flake_codeclimate'],
+    py_modules=['flake8_codeclimate'],
     install_requires=requires,
     entry_points={
         'flake8.report': [
