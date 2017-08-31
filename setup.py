@@ -10,7 +10,7 @@ readme = open('README.rst').read()
 setuptools.setup(
     name="flake8_codeclimate",
     license="MIT",
-    version="0.1.2",
+    version="0.1.3",
     description="Code Climate reporting formatter plugin for Flake8",
     long_description=readme,
     author="Ben Lopatin",
