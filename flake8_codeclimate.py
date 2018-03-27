@@ -7,14 +7,14 @@ Flake8 plugin for Code Climate JSON format reporting::
 
 """
 
+import json
+
+from flake8.formatting import base
 from pkg_resources import DistributionNotFound, get_distribution
 
 __author__ = 'Ben Lopatin'
 __license__ = 'MIT'
 
-
-import json
-from flake8.formatting import base
 try:
     __version__ = get_distribution(__name__).version
 except DistributionNotFound:
