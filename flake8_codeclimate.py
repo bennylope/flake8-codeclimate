@@ -7,13 +7,19 @@ Flake8 plugin for Code Climate JSON format reporting::
 
 """
 
+from pkg_resources import DistributionNotFound, get_distribution
+
 __author__ = 'Ben Lopatin'
-__version__ = '0.1.0'
 __license__ = 'MIT'
 
 
 import json
 from flake8.formatting import base
+try:
+    __version__ = get_distribution(__name__).version
+except DistributionNotFound:
+    # package is not installed
+    pass
 
 
 category_complexity = "Complexity"

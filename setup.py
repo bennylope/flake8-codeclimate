@@ -10,13 +10,16 @@ readme = open('README.rst').read()
 setuptools.setup(
     name="flake8_codeclimate",
     license="MIT",
-    version="0.1.3",
+    use_scm_version=True,
     description="Code Climate reporting formatter plugin for Flake8",
     long_description=readme,
     author="Ben Lopatin",
     author_email="ben@benlopatin.com",
     url="https://github.com/bennylope/flake8-codeclimate",
     py_modules=['flake8_codeclimate'],
+        setup_requires=[
+        'setuptools_scm',
+    ],
     install_requires=requires,
     entry_points={
         'flake8.report': [
