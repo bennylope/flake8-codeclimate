@@ -78,6 +78,7 @@ def error_category(error):
 
 class JSONFormatter(base.BaseFormatter):
     """Formatter for Code Climate JSON reporting"""
+
     def format(self, error):
         return json.dumps({
             "type": "issue",
