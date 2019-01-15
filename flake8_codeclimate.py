@@ -7,6 +7,7 @@ Flake8 plugin for Code Climate JSON format reporting::
 
 """
 
+import hashlib
 import json
 
 from flake8.formatting import base
@@ -79,17 +80,26 @@ def error_category(error):
 class JSONFormatter(base.BaseFormatter):
     """Formatter for Code Climate JSON reporting"""
 
+    def create_fingerprint(self, error):
+        value = ":".join(str(val) for val in error)
+        return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
     def format(self, error):
         return json.dumps({
             "type": "issue",
             "check_name": error.code,  # TODO map codes to names
             "description": error.text,
+            "fingerprint": self.create_fingerprint(error),
             "content": {
                 "body": "`{}`".format(error.physical_line),
             },
             "categories": [error_category(error)],
             "location": {
                 "path": error.filename,
+                "lines": {
+                    "begin": error.line_number,
+                    "end": error.line_number,
+                },
                 "positions": {
                     "begin": {
                         "line": error.line_number,

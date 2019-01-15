@@ -6,6 +6,7 @@ docs/_build
 *.sqlite
 .tox
 .env
+.eggs/
 
 .coverage
 htmlcov/
