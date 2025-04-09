@@ -20,6 +20,7 @@ setuptools.setup(
     py_modules=['flake8_codeclimate'],
         setup_requires=[
         'setuptools_scm',
+        'wheel',
     ],
     install_requires=requires,
     entry_points={
