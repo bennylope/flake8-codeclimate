@@ -11,14 +11,14 @@ import hashlib
 import json
 
 from flake8.formatting import base
-from pkg_resources import DistributionNotFound, get_distribution
+import importlib.metadata
 
 __author__ = 'Ben Lopatin'
 __license__ = 'MIT'
 
 try:
-    __version__ = get_distribution(__name__).version
-except DistributionNotFound:
+    __version__ = importlib.metadata.version(__name__)
+except importlib.metadata.PackageNotFoundError:
     # package is not installed
     pass
 
